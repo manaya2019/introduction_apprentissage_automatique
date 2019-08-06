@@ -28,3 +28,10 @@ Lequel des deux arbres de décision suivants est le plus susceptible de résulte
 L'arbre de décision à gauche (Arbre de décision 1) a probablement plus de sens, car il rend compte du fait que les maisons avec plus de chambres à coucher ont tendance à se vendre à des prix plus élevés que les maisons avec moins de chambres. L'inconvénient majeur de ce modèle est qu'il ne prend pas en compte la plupart des facteurs affectant le prix de la maison, tels que le nombre de salles de bain, la taille des terrains, l'emplacement, etc.
 
 Vous pouvez capturer plus de facteurs en utilisant un arbre qui a plus de "divisions". Celles-ci sont appelées arbres "plus profonds". Un arbre de décision prenant également en compte la taille totale du lot de chaque maison pourrait se présenter comme suit:
+
+![ ](images/figure3.PNG)
+
+Vous prédisez le prix d'une maison en effectuant un suivi dans l'arbre de décision, en choisissant toujours le chemin correspondant aux caractéristiques de cette maison. Le prix prévu pour la maison est au bas de l'arbre. Le point en bas où nous faisons une prédiction s'appelle une feuille.
+
+Les fractionnements et les valeurs aux feuilles seront déterminés par les données, il est donc temps pour vous de vérifier les données avec lesquelles vous allez travailler.
+
