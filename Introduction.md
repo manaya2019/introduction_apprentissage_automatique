@@ -12,3 +12,5 @@ Vous lui demandez comment il a prédit les valeurs immobilières dans le passé.
 L'apprentissage automatique fonctionne de la même manière. Nous allons commencer avec un modèle appelé l'arbre de décision (decision tree). Il existe des modèles plus sophistiqués qui donnent des prévisions plus précises. Mais les arbres de décision sont faciles à comprendre et constituent la pierre angulaire de certains des meilleurs modèles en science des données.
 
 Pour commencer, nous allons voir l’arbre de décision le plus simple possible.
+
+![Exemple d'arbre de décision](images/figure1.PNG)
