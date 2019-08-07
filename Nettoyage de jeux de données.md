@@ -67,7 +67,7 @@ et de la méthode head, qui présente les quelques lignes du haut.
 X.describe()
 ```
 ````
-       Rooms	       Bathroom	   Landsize	  Lattitude	  Longtitude
+        Rooms	       Bathroom	   Landsize	       Lattitude	  Longtitude
 count	6196.000000	6196.000000	6196.000000	6196.000000	6196.000000
 mean	2.931407	1.576340	471.006940	-37.807904	144.990201
 std	0.971079	0.711362	897.449881	0.075850	0.099165
@@ -77,3 +77,52 @@ min	1.000000	1.000000	0.000000	-38.164920	144.542370
 75%	4.000000	2.000000	628.000000	-37.758200	145.052700
 max	8.000000	8.000000	37000.000000	-37.457090	145.526350
 ````
+``X.head()
+`` permet d'afficher les premières lignes du tableau.
+
+Vérifier visuellement vos données avec ces commandes ci-dessus, est une partie importante du travail d'un data scientist. 
+Vous trouverez souvent dans un dataset des surprises qui méritent d’être examinées plus en profondeur.
+
+## Construire votre modèle
+Vous utiliserez la bibliothèque scikit-learn pour créer vos modèles. Lors du codage, cette bibliothèque est écrite en tant que sklearn, comme vous le verrez dans l'exemple de code. Scikit-learn est la bibliothèque la plus répandue pour modéliser les types de données généralement stockées dans les DataFrames.
+
+Les étapes pour construire et utiliser un modèle sont les suivantes:
+
+**Définir** : de quel type de modèle s'agira-t-il? Un arbre de décision? Un autre type de modèle? Certains autres paramètres du type de modèle sont également spécifiés.
+**Fit** : Capture des modèles à partir des données fournies. C'est le cœur de la modélisation.
+**Prédire** : à quoi ça ressemble
+**Evaluer** : Déterminez la précision des prévisions du modèle.
+
+Voici un exemple de définition d’un modèle d’arbre de décision avec scikit-learn et d’adapter celui-ci aux caractéristiques et à la variable cible.
+```
+from sklearn.tree import DecisionTreeRegressor
+
+# Définir le model. Choisir un  nombre  pour random_state pour avoir les memes resultats à chaque execution
+melbourne_model = DecisionTreeRegressor(random_state=1)
+
+# Fit model
+melbourne_model.fit(X, y)
+```
+De nombreux modèles d’apprentissage automatique permettent une certaine aléatoire dans la formation des modèles. La spécification d'un nombre pour ``random_state`` permet de garantir les mêmes résultats à chaque exécution. Ceci est considéré comme une bonne pratique. Vous utilisez n’importe quel nombre et la qualité du modèle ne dépend pas de la valeur que vous choisissez.
+
+Nous avons maintenant un modèle ajusté que nous pouvons utiliser pour faire des prévisions.
+
+En pratique, vous serez amenés à faire des prédictions pour les nouvelles maisons à venir sur le marché plutôt que pour les maisons pour lesquelles nous avons déjà des prix. Mais nous ferons des prévisions pour les premières lignes des données d'apprentissage afin de voir le fonctionnement de la fonction de prévision.
+
+```
+print("Making predictions for the following 5 houses:")
+print(X.head())
+print("The predictions are")
+print(melbourne_model.predict(X.head()))
+```
+```
+Making predictions for the following 5 houses:
+   Rooms  Bathroom  Landsize  Lattitude  Longtitude
+1      2       1.0     156.0   -37.8079    144.9934
+2      3       2.0     134.0   -37.8093    144.9944
+4      4       1.0     120.0   -37.8072    144.9941
+6      3       2.0     245.0   -37.8024    144.9993
+7      2       1.0     256.0   -37.8060    144.9954
+The predictions are
+[1035000. 1465000. 1600000. 1876000. 1636000.]
+```
