@@ -64,7 +64,7 @@ Une fois que nous avons un modèle, voici comment nous calculons l'erreur absolu
 
 predicted_home_prices = melbourne_model.predict(X)
 mean_absolute_error(y, predicted_home_prices)```
-
 ``264736.065203357``
 
-Notez qu'il existe de nombreuses façons d'améliorer ce modèle, par exemple en essayant de trouver de meilleures features ou différents types de modèles.
+Notez qu'il existe de nombreuses façons d'améliorer ce modèle, 
+par exemple en essayant de trouver de meilleures features ou différents types de modèles.
