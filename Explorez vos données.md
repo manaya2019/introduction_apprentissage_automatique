@@ -1,8 +1,8 @@
 ## Utilisez pandas pour vous familiariser avec vos données
 
 La première étape de tout projet d’apprentissage automatique consiste à vous familiariser avec les données. 
-Pandas est la principale libriairie outil utilisé par les scientifiques pour explorer et manipuler des données. 
-Pour l'utisiser il faut l'importer grâce à la commande:
+Pandas est la principale libriairie utilisée par les scientifiques pour explorer et manipuler des données. 
+Pour l'utiliser il faut l'importer grâce à la commande:
 
 ```
 import pandas as pd
